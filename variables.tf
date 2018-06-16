@@ -1,7 +1,4 @@
 # Project
-variable "unique_id" {
-  description = "A unique identifier for naming resources."
-}
 
 variable "create_lc" {
   description = "Count of ASGs"
@@ -108,10 +105,4 @@ variable "min_size" {
 variable "max_size" {
   description = "The maximum number of instances in your auto scaling group."
   default     = 1
-}
-
-variable "load_balancers" {
-  description = "The name of the load balancer that this auto scaling group is connected to."
-  type        = "list"
-  default     = []
 }
