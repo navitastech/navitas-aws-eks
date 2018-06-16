@@ -19,18 +19,6 @@ variable "asv" {
   default     = "ASVNAVITAS"
 }
 
-variable "KubernetesCluster" {
-  description = "The cluster tag for EBS dynamic provisioning."
-}
-
-variable "project" {
-  description = "The project for which the ASG is in use for."
-}
-
-variable "cmdb_environment" {
-  description = "Corresponds to CMDBEnvironment tag."
-}
-
 variable "owner_contact" {
   description = "Corresponds to OwnerContact tag. Valid C1 email address."
   default     = "gude.ravi@gmail.com"
@@ -39,10 +27,6 @@ variable "owner_contact" {
 variable "kubernetes_version" {
   description = "Version of kubernetes we want to install."
   default     = "v1.8.3"
-}
-
-variable "role" {
-  description = "Role of node for Kubernetes cluster"
 }
 
 variable "owner_eid" {
@@ -96,6 +80,7 @@ variable "ebs_block_device" {
 # Variables for Defining Instances in Auto Scaling Group
 variable "ami_id" {
   description = "The base AMI to launch instances."
+  default     = "ami-43a15f3e"
 }
 
 variable "instance_type" {
@@ -103,30 +88,12 @@ variable "instance_type" {
   default     = "t2.micro"
 }
 
-variable "iam_instance_profile" {
-  description = "The role you want assigned to your instances."
-}
-
 variable "key_name" {
   description = "This is the name of your pem file. Specify this so you can SSH into the machine(s)."
   default     = ""
 }
 
-variable "security_groups" {
-  description = "The security groups for the EC2 instances."
-  type        = "list"
-}
-
 # Variables for ASG resource
-variable "availability_zones" {
-  description = "List of availability zones for EC2 Tier."
-  type        = "list"
-}
-
-variable "subnet_ids" {
-  description = "List of subnets associated with the instances."
-  type        = "list"
-}
 
 variable "desired_capacity" {
   description = "The desired number of instances in your auto scaling group"
