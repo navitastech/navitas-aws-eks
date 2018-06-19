@@ -77,7 +77,7 @@ variable "ebs_block_device" {
 # Variables for Defining Instances in Auto Scaling Group
 variable "ami_id" {
   description = "The base AMI to launch instances."
-  default     = "ami-43a15f3e"
+  default     = "ami-dea4d5a1"
 }
 
 variable "instance_type" {
